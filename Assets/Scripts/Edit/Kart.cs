@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class Kart : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private KartAgent kartAgent;
+    [SerializeField] private KartController kartController;
+    public TrackCheckpoint trackCheckpoint;
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if(other.TryGetComponent<Wall>(out Wall wall))
+        {
+            Debug.Log("Wall");
+            kartAgent.AddReward(-1f);
+            kartAgent.EndEpisode();
+
+
+            kartController.Respawn();
+            trackCheckpoint.resetCheckpoints();
+            
+        }
     }
 }

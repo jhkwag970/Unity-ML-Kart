@@ -9,7 +9,7 @@ public class CheckpointSingle : MonoBehaviour
     {
         if(other.TryGetComponent<Kart>(out Kart kart))
         {
-            trackCheckpoints.KartThroughCheckpoint(this, other.transform);
+            trackCheckpoints.KartThroughCheckpoint(this, other.transform.parent);
         }
     }
 
