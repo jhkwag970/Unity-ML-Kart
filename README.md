@@ -1,7 +1,7 @@
 # Unity-ML-Kart
 Unity for ML Kart Simulation
 
-<h3> Test Case V.1 </h3> April 7th 2023
+<h3> Test Case V.2 </h3> April 7th 2023
 
 At first, I set the previous check point with negative reward and next check point with positive reward. Then, whenever the agent hits the previous check point, I ended th episode so that the agent can start over.
 
