@@ -19,16 +19,16 @@ public class CheckpointManager : MonoBehaviour
 
     void Start()
     {
-        Checkpoints = FindObjectOfType<Checkpoints>().checkPoints;
-        ResetCheckpoints();
+        //Checkpoints = FindObjectOfType<Checkpoints>().checkPoints;
+        //ResetCheckpoints();
     }
 
     public void ResetCheckpoints()
     {
-        CurrentCheckpointIndex = 0;
+/*        CurrentCheckpointIndex = 0;
         TimeLeft = MaxTimeToReachNextCheckpoint;
         
-        SetNextCheckpoint();
+        SetNextCheckpoint();*/
     }
 
     private void Update()
@@ -37,14 +37,14 @@ public class CheckpointManager : MonoBehaviour
 
         if (TimeLeft < 0f)
         {
-            kartAgent.AddReward(-1f);
-            kartAgent.EndEpisode();
+            //kartAgent.AddReward(-1f);
+            //kartAgent.EndEpisode();
         }
     }
 
     public void CheckPointReached(Checkpoint checkpoint)
     {
-        if (nextCheckPointToReach != checkpoint) return;
+/*        if (nextCheckPointToReach != checkpoint) return;
         
         lastCheckpoint = Checkpoints[CurrentCheckpointIndex];
         reachedCheckpoint?.Invoke(checkpoint);
@@ -52,23 +52,23 @@ public class CheckpointManager : MonoBehaviour
 
         if (CurrentCheckpointIndex >= Checkpoints.Count)
         {
-            kartAgent.AddReward(0.5f);
-            kartAgent.EndEpisode();
+            //kartAgent.AddReward(0.5f);
+            //kartAgent.EndEpisode();
         }
         else
         {
-            kartAgent.AddReward((0.5f) / Checkpoints.Count);
-            SetNextCheckpoint();
-        }
+            //kartAgent.AddReward((0.5f) / Checkpoints.Count);
+            //SetNextCheckpoint();
+        }*/
     }
 
     private void SetNextCheckpoint()
     {
-        if (Checkpoints.Count > 0)
+/*        if (Checkpoints.Count > 0)
         {
             TimeLeft = MaxTimeToReachNextCheckpoint;
             nextCheckPointToReach = Checkpoints[CurrentCheckpointIndex];
             
-        }
+        }*/
     }
 }

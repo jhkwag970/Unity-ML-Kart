@@ -5,20 +5,20 @@ using UnityEngine;
 public class Kart : MonoBehaviour
 {
     [SerializeField] private KartAgent kartAgent;
-    [SerializeField] private KartController kartController;
-    public TrackCheckpoint trackCheckpoint;
+
+    [Header("Result Parameters")]
+    [SerializeField] private Material winMaterial;
+    [SerializeField] private Material loseMaterial;
+    [SerializeField] private MeshRenderer floor;
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.TryGetComponent<Wall>(out Wall wall))
         {
             Debug.Log("Wall");
-            kartAgent.AddReward(-1f);
+            floor.material = loseMaterial;
+            kartAgent.AddReward(-0.5f);
             kartAgent.EndEpisode();
-
-
-            kartController.Respawn();
-            trackCheckpoint.resetCheckpoints();
             
         }
     }

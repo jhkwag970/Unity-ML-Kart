@@ -28,11 +28,13 @@ public class KartController : MonoBehaviour
    public Transform backWheels;
    public Transform steeringWheel;
 
-    public Vector3 initialPosition;
+    private Vector3 initialPosition;
+    private Quaternion initialRoation;
 
    public void Awake()
    {
         initialPosition = transform.position;
+        initialRoation = transform.rotation;
    }
 
    public void ApplyAcceleration(float input)
@@ -57,19 +59,9 @@ public class KartController : MonoBehaviour
    
    public void Respawn()
    {
-        /*Vector3 pos = _spawnPointManager.SelectRandomSpawnpoint();
-        sphere.MovePosition(pos);
-        transform.position = pos - new Vector3(0, 0.4f, 0);*/
-
-        /*        Debug.Log(transform.position);
-                Vector3 pos = new Vector3(35.60f,0.9f, -2.70f);
-
-                sphere.MovePosition(pos);
-                transform.localPosition = pos - new Vector3(0, 0.4f, 0);*/
-
         transform.position = initialPosition;
+        transform.rotation = initialRoation;
         sphere.MovePosition(initialPosition + new Vector3(0, 0.4f, 0));
-
    }
    
    public void FixedUpdate()

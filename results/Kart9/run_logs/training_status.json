@@ -1,0 +1,56 @@
+{
+    "KartAgent": {
+        "checkpoints": [
+            {
+                "steps": 499471,
+                "file_path": "results\\Kart9\\KartAgent\\KartAgent-499471.onnx",
+                "reward": 0.8461538461538461,
+                "creation_time": 1680877880.0672371,
+                "auxillary_file_paths": [
+                    "results\\Kart9\\KartAgent\\KartAgent-499471.pt"
+                ]
+            },
+            {
+                "steps": 999609,
+                "file_path": "results\\Kart9\\KartAgent\\KartAgent-999609.onnx",
+                "reward": -0.5,
+                "creation_time": 1680878410.9596949,
+                "auxillary_file_paths": [
+                    "results\\Kart9\\KartAgent\\KartAgent-999609.pt"
+                ]
+            },
+            {
+                "steps": 1499629,
+                "file_path": "results\\Kart9\\KartAgent\\KartAgent-1499629.onnx",
+                "reward": 0.0,
+                "creation_time": 1680878904.7202005,
+                "auxillary_file_paths": [
+                    "results\\Kart9\\KartAgent\\KartAgent-1499629.pt"
+                ]
+            },
+            {
+                "steps": 1710861,
+                "file_path": "results\\Kart9\\KartAgent\\KartAgent-1710861.onnx",
+                "reward": 0.0,
+                "creation_time": 1680879109.6111472,
+                "auxillary_file_paths": [
+                    "results\\Kart9\\KartAgent\\KartAgent-1710861.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1710861,
+            "file_path": "results\\Kart9\\KartAgent.onnx",
+            "reward": 0.0,
+            "creation_time": 1680879109.6111472,
+            "auxillary_file_paths": [
+                "results\\Kart9\\KartAgent\\KartAgent-1710861.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

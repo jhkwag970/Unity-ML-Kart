@@ -1,0 +1,42 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1680909678",
+        "python_version": "3.9.12 (tags/v3.9.12:b28265d, Mar 23 2022, 23:52:46) [MSC v.1929 64 bit (AMD64)]",
+        "command_line_arguments": "C:\\Users\\jhkwa\\AppData\\Local\\Programs\\Python\\Python39\\Scripts\\mlagents-learn KartAgent.yaml --run-id=Kart12",
+        "mlagents_version": "0.30.0",
+        "mlagents_envs_version": "0.30.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "1.7.1+cu110",
+        "numpy_version": "1.21.2",
+        "end_time_seconds": "1680909739"
+    },
+    "total": 61.122321500000005,
+    "count": 1,
+    "self": 0.00811790000001622,
+    "children": {
+        "run_training.setup": {
+            "total": 0.0887834999999999,
+            "count": 1,
+            "self": 0.0887834999999999
+        },
+        "TrainerController.start_learning": {
+            "total": 61.02542009999999,
+            "count": 1,
+            "self": 0.00015929999999286792,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 61.025218699999996,
+                    "count": 1,
+                    "self": 61.025218699999996
+                },
+                "TrainerController._save_models": {
+                    "total": 4.2100000001710214e-05,
+                    "count": 1,
+                    "self": 4.2100000001710214e-05
+                }
+            }
+        }
+    }
+}

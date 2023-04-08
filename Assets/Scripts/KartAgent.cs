@@ -7,7 +7,6 @@ using UnityEngine;
 
 public class KartAgent : Agent
 {
-    //public CheckpointManager _checkpointManager;
     public TrackCheckpoint trackCheckpoint;
     private KartController _kartController;
    
@@ -20,27 +19,24 @@ public class KartAgent : Agent
    //Called each time it has timed-out or has reached the goal
    public override void OnEpisodeBegin()
    {
-        //_checkpointManager.ResetCheckpoints();
-        //_kartController.Respawn();
-
+        Debug.Log("Respawned");
         trackCheckpoint.resetCheckpoints();
         _kartController.Respawn();
    }
 
+
     public override void CollectObservations(VectorSensor sensor)
     {
-        //Vector btw kart and next check point
-        //Vector3 diff = _checkpointManager.nextCheckPointToReach.transform.position - transform.position;
-
-        //sensor.AddObservation(diff / 20f);
-
-        //AddReward(-0.001f);
-
         sensor.AddObservation(transform.position);
         foreach(CheckpointSingle checkpoint in trackCheckpoint.checkpointSingleList)
         {
             sensor.AddObservation(checkpoint);
         }
+
+        /*foreach (Transform checkpoint in trackCheckpoint.checkpointSingleTransformList)
+        {
+            sensor.AddObservation(checkpoint);
+        }*/
     }
 
     public override void OnActionReceived(ActionBuffers actions)
